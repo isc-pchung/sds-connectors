@@ -1,15 +1,17 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "helm.fullname" . }}
+  name: connectors-python
+  namespace: sds-cp # param
   labels:
-    {{- include "helm.labels" . | nindent 4 }}
+    app: connectors-python
+    
 spec:
-  type: {{ .Values.service.type }}
-  ports:
-    - port: {{ .Values.service.port }}
-      targetPort: http
-      protocol: TCP
-      name: http
   selector:
-    {{- include "helm.selectorLabels" . | nindent 4 }}
+    app: connectors-python
+  ports:
+    - name: connectors-python
+      port: 10050
+      targetPort: 8000
+  type: LoadBalancer
+    
