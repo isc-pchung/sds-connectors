@@ -1,7 +1,7 @@
 replicaCount: 1
 
 app:
-  namespace: "sds-cp"
+  namespace: "sds-service"
 
 image:
   registry: containers.intersystems.com/iscinternal/sds-service
