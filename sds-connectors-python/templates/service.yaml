@@ -10,7 +10,6 @@ metadata:
 spec:
   selector:
     app: connectors-python
-    # {{- if eq (toString .Values.management.enabled) "true" }}
     - name: management
       port: {{ .Values.management.port }}
       targetPort: 8000
