@@ -10,6 +10,7 @@ metadata:
 spec:
   selector:
     app: connectors-python
+  ports:
     - name: management
       port: {{ .Values.management.port }}
       targetPort: 8000
