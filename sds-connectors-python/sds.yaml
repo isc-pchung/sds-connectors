@@ -1,1 +1,10 @@
 apiVersion: v1
+
+secrets:
+- field: requiredSecrets.irisLicense
+  type: intersystems-iris-license
+  reason: The IRIS License to be used with this deployment
+- field: requiredSecrets.intersystemsContainerRegistrySecret
+  type: image-pull-secret
+  subType: containers.intersystems.com
+  reason: These are the credentials to authenticate with containers.intersystems.com

@@ -2,13 +2,13 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: connectors-python
-  namespace: sds-cp
+  namespace: {{.Values.app.namespace}}
   labels:
     app: connectors-python
     
     
 spec:
-  replicas: 1
+  replicas: {{.Values.replicaCount}}
   selector:
     matchLabels:
       app: connectors-python
@@ -21,8 +21,9 @@ spec:
         - name: intersystems-container-registry-secret
       containers:
         - name: sds-connectors-python
-          image: containers.intersystems.com/iscinternal/sds-service/sds-connectors-python:0.1
-          imagePullPolicy: Always
+          # image: containers.intersystems.com/iscinternal/sds-service/sds-connectors-python:0.1
+          image: {{ .Values.image.registry }}/{{ .Values.image.repository }}:{{ .Chart.AppVersion }}
+          imagePullPolicy: {{.Values.image.pullPolicy}}
           ports:
             - name: http
               containerPort: 8000
