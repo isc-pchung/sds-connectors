@@ -17,8 +17,12 @@ spec:
       labels:
         app: connectors-python
     spec:
+      # imagePullSecrets:
+      #   - name: intersystems-container-registry-secret
       imagePullSecrets:
-        - name: intersystems-container-registry-secret
+          {{- if .Values.requiredSecrets.intersystemsContainerRegistrySecret }}    
+          - name: {{ .Values.requiredSecrets.intersystemsContainerRegistrySecret }}
+          {{- end }}
       containers:
         - name: sds-connectors-python
           # image: containers.intersystems.com/iscinternal/sds-service/sds-connectors-python:0.1
