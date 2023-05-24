@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: connectors-python
-  namespace: {{.Values.app.namespace}}
+  namespace: {{.Release.Name}}
   labels:
     app: connectors-python
     
