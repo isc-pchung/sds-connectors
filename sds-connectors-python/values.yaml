@@ -3,6 +3,12 @@ replicaCount: 1
 app:
   namespace: "sds-services"
 
+compute:
+  database:
+    nodeTypeSelector: ""
+    cpu: 2
+    memory: 2Gi
+
 image:
   registry: containers.intersystems.com/iscinternal/sds-service
   repository: sds-connectors-python
@@ -78,3 +84,9 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+
+management:
+  enabled: true
+  hostname: "localhost"
+  port: "8000"

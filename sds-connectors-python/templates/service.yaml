@@ -1,3 +1,4 @@
+{{- if eq (toString .Values.management.enabled) "true" }}
 apiVersion: v1
 kind: Service
 metadata:
@@ -9,9 +10,10 @@ metadata:
 spec:
   selector:
     app: connectors-python
-  ports:
-    - name: connectors-python
-      port: {{.Values.service.port}}
+    # {{- if eq (toString .Values.management.enabled) "true" }}
+    - name: management
+      port: {{ .Values.management.port }}
       targetPort: 8000
   type: LoadBalancer
+{{- end }}
     
