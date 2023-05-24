@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: connectors-python
+  namespace: sds-cp # param
+  labels:
+    app: connectors-python
+    
+spec:
+  selector:
+    app: connectors-python
+  ports:
+    - name: connectors-python
+      port: 10050
+      targetPort: 8000
+  type: LoadBalancer
+    

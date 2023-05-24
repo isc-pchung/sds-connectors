@@ -22,7 +22,7 @@ spec:
       containers:
         - name: sds-connectors-python
           image: containers.intersystems.com/iscinternal/sds-service/sds-connectors-python:0.1
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
           ports:
             - name: http
               containerPort: 8000
