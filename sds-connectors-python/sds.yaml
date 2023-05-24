@@ -15,5 +15,3 @@ externalServicesDeclarations:
    enabledChartField: management.enabled
    label: Management Portal over Load Balancer
    description: Port to access the management portal over a Load Balancer
-
-
