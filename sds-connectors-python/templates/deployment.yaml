@@ -43,15 +43,15 @@ spec:
       # - key: sds/select-worker
       #   value: select-worker
       #   effect: NoSchedule
-      {{- if .Values.compute.connector.nodeTypeSelector }}
-      nodeSelector:
-        sds/node-type: {{ .Values.compute.connector.nodeTypeSelector }}
-      {{- end }}
-      resources:
-        requests:
-          cpu: {{ .Values.compute.connector.cpu }}
-          memory: {{ .Values.compute.connector.memory }}
-      tolerations:
-      - key: sds/select-worker
-        value: select-worker
-        effect: NoSchedule
+      # {{- if .Values.compute.connector.nodeTypeSelector }}
+      # nodeSelector:
+      #   sds/node-type: {{ .Values.compute.connector.nodeTypeSelector }}
+      # {{- end }}
+      # resources:
+      #   requests:
+      #     cpu: {{ .Values.compute.connector.cpu }}
+      #     memory: {{ .Values.compute.connector.memory }}
+      # tolerations:
+      # - key: sds/select-worker
+      #   value: select-worker
+      #   effect: NoSchedule

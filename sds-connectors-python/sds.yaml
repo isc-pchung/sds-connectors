@@ -19,13 +19,13 @@ endpoints:
   externalService: management
 
 externalServicesDeclarations:
- - name: management
+ - name: admin
    type: loadBalancer
-   hostnameChartField: management.hostname
-   loadBalancerPortChartField: management.port
+   hostnameChartField: admin.hostname
+   loadBalancerPortChartField: admin.port
    enabled: false
-   enabledChartField: management.enabled
-   label: Management Portal over Load Balancer
+   enabledChartField: admin.enabled
+   label: Web Admin Portal over Load Balancer
    description: Port to access the management portal over a Load Balancer
 
 # compute:
@@ -39,14 +39,14 @@ externalServicesDeclarations:
 #     cpuRequestField: compute.database.cpu
 #     memoryRequestField: compute.database.memory
 #     help: Specifies how many cores and how much memory your database server nodes will have 
-compute:
-  computeSpecs:
-  - name: connector
-    label: Python Connector Node Specification
-    categoryFilter: CO,MO,GP
-    minCPU: 2
-    minRAM: 4
-    nodeSelectorField: compute.connector.nodeTypeSelector
-    cpuRequestField: compute.connector.cpu
-    memoryRequestField: compute.connector.memory
-    help: Specifies how many cores and how much memory your connector nodes will have 
+# compute:
+#   computeSpecs:
+#   - name: connector
+#     label: Python Connector Node Specification
+#     categoryFilter: CO,MO,GP
+#     minCPU: 2
+#     minRAM: 4
+#     nodeSelectorField: compute.connector.nodeTypeSelector
+#     cpuRequestField: compute.connector.cpu
+#     memoryRequestField: compute.connector.memory
+#     help: Specifies how many cores and how much memory your connector nodes will have 
