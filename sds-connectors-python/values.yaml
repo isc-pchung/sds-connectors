@@ -3,8 +3,13 @@ replicaCount: 1
 app:
   namespace: "sds-services"
 
+# compute:
+#   database:
+#     nodeTypeSelector: ""
+#     cpu: 2
+#     memory: 2Gi
 compute:
-  database:
+  connector:
     nodeTypeSelector: ""
     cpu: 2
     memory: 2Gi

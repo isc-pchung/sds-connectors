@@ -7,9 +7,9 @@ secrets:
   reason: These are the credentials to authenticate with containers.intersystems.com
 
 endpoints:
-- title: SQL
+- title: Web Endpoint Admin
   group: Developer
-  description: Open the SQL tab in the management portal
+  description: Open the Endpoint Admin tab in the management portal
   type: browsing
   url: http://{externalService.host}:{externalService.port}/docs#/default/root__get
   contexts: 
@@ -39,3 +39,14 @@ externalServicesDeclarations:
 #     cpuRequestField: compute.database.cpu
 #     memoryRequestField: compute.database.memory
 #     help: Specifies how many cores and how much memory your database server nodes will have 
+compute:
+  computeSpecs:
+  - name: connector
+    label: Database Node Specification
+    categoryFilter: CO,MO,GP
+    minCPU: 2
+    minRAM: 4
+    nodeSelectorField: compute.connector.nodeTypeSelector
+    cpuRequestField: compute.connector.cpu
+    memoryRequestField: compute.connector.memory
+    help: Specifies how many cores and how much memory your database server nodes will have 
