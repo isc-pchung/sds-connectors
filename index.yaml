@@ -7,12 +7,12 @@ entries:
       intersystems/sds-title: SDS Connectors Python
     apiVersion: v2
     appVersion: "0.1"
-    created: "2023-05-25T15:18:40.167906-04:00"
+    created: "2023-05-25T15:24:06.257059-04:00"
     description: A Helm chart for Kubernetes
-    digest: 9bbf23dbb2f7ecd0f4b70d4c9ed0e3fdf255475b841f52cc1aa636e50d3aa0ef
+    digest: 3d7d9cebaabc404ee7fe5e9d8c3fbcec33d1b5a5f30ee00651f2f48045331f8f
     name: sds-connectors-python
     type: application
     urls:
     - https://isc-pchung.github.io/sds-python-connectors2/sds-connectors-python-0.1.0.tgz
     version: 0.1.0
-generated: "2023-05-25T15:18:40.166859-04:00"
+generated: "2023-05-25T15:24:06.256015-04:00"
