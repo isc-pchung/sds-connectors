@@ -3,13 +3,8 @@ replicaCount: 1
 app:
   namespace: "sds-services"
 
-# compute:
-#   database:
-#     nodeTypeSelector: ""
-#     cpu: 2
-#     memory: 2Gi
 compute:
-  connector:
+  database:
     nodeTypeSelector: ""
     cpu: 2
     memory: 2Gi
@@ -91,11 +86,7 @@ tolerations: []
 affinity: {}
 
 
-# management:
-#   enabled: true
-#   hostname: "localhost"
-#   port: "8000"
-admin:
+management:
   enabled: true
   hostname: "localhost"
   port: "8000"
