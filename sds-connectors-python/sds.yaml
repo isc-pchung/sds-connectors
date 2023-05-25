@@ -19,7 +19,7 @@ endpoints:
   externalService: management
 
 externalServicesDeclarations:
- - name: admin
+ - name: management
    type: loadBalancer
    hostnameChartField: admin.hostname
    loadBalancerPortChartField: admin.port
