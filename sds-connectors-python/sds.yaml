@@ -42,7 +42,7 @@ externalServicesDeclarations:
 compute:
   computeSpecs:
   - name: connector
-    label: Database Node Specification
+    label: Python Connector Node Specification
     categoryFilter: CO,MO,GP
     minCPU: 2
     minRAM: 4
