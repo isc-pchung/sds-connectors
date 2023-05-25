@@ -86,7 +86,7 @@ tolerations: []
 affinity: {}
 
 
-admin:
+management:
   enabled: true
   hostname: "localhost"
   port: "8000"
