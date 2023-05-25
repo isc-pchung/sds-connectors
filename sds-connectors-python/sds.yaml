@@ -49,4 +49,4 @@ compute:
     nodeSelectorField: compute.connector.nodeTypeSelector
     cpuRequestField: compute.connector.cpu
     memoryRequestField: compute.connector.memory
-    help: Specifies how many cores and how much memory your database server nodes will have 
+    help: Specifies how many cores and how much memory your connector nodes will have 
