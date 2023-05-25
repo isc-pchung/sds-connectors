@@ -28,18 +28,22 @@ spec:
           # image: containers.intersystems.com/iscinternal/sds-service/sds-connectors-python:0.1
           image: {{ .Values.image.registry }}/{{ .Values.image.repository }}:{{ .Chart.AppVersion }}
           imagePullPolicy: {{.Values.image.pullPolicy}}
+          resources:
+            requests:
+              cpu: {{ .Values.compute.database.cpu }}
+              memory: {{ .Values.compute.database.memory }}
           ports:
             - name: http
               containerPort: 8000
-        {{- if .Values.compute.database.nodeTypeSelector }}
-        nodeSelector:
-          sds/node-type: {{ .Values.compute.database.nodeTypeSelector }}
-        {{- end }}
-        resources:
-          requests:
-            cpu: {{ .Values.compute.database.cpu }}
-            memory: {{ .Values.compute.database.memory }}
-        tolerations:
-        - key: sds/select-worker
-          value: select-worker
-          effect: NoSchedule
+      {{- if .Values.compute.database.nodeTypeSelector }}
+      nodeSelector:
+        sds/node-type: {{ .Values.compute.database.nodeTypeSelector }}
+      {{- end }}
+      # resources:
+      #   requests:
+      #     cpu: {{ .Values.compute.database.cpu }}
+      #     memory: {{ .Values.compute.database.memory }}
+      tolerations:
+      - key: sds/select-worker
+        value: select-worker
+        effect: NoSchedule
