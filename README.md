@@ -1,1 +1,1 @@
-# sds-python-connectors2
+# sds-connectors
