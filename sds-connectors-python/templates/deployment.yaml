@@ -39,10 +39,6 @@ spec:
       nodeSelector:
         sds/node-type: {{ .Values.compute.database.nodeTypeSelector }}
       {{- end }}
-      # resources:
-      #   requests:
-      #     cpu: {{ .Values.compute.database.cpu }}
-      #     memory: {{ .Values.compute.database.memory }}
       tolerations:
       - key: sds/select-worker
         value: select-worker
