@@ -24,7 +24,7 @@ spec:
           - name: {{ .Values.requiredSecrets.intersystemsContainerRegistrySecret }}
           {{- end }}
       containers:
-        - name: sds-connectors-python
+        - name: sds-connectors-jvm
           # image: containers.intersystems.com/iscinternal/sds-service/sds-connectors-jvm:0.1.0
           image: {{ .Values.image.registry }}/{{ .Values.image.repository }}:{{ .Chart.AppVersion }}
           imagePullPolicy: {{.Values.image.pullPolicy}}
