@@ -7,11 +7,11 @@ secrets:
   reason: These are the credentials to authenticate with containers.intersystems.com
 
 endpoints:
-- title: SQL
+- title: Swagger
   group: Developer
-  description: Open the SQL tab in the management portal
+  description: Open the Swagger documentation page for API
   type: browsing
-  url: http://{externalService.host}:{externalService.port}/docs#/default/root__get
+  url: http://{externalService.host}:{externalService.port}/swagger-ui.html
   contexts: 
   - manage
   visibility: external

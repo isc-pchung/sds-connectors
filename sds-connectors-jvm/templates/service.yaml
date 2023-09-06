@@ -6,7 +6,6 @@ metadata:
   namespace: {{.Release.Name}}
   labels:
     app: connectors-jvm
-    
 spec:
   selector:
     app: connectors-jvm
@@ -14,5 +13,8 @@ spec:
     - name: management
       port: {{ .Values.management.port }}
       targetPort: 8000
+    - name: quickfix
+      port: {{ .Values.quickfix.port }}
+      targetPort: 3001
   type: LoadBalancer
 {{- end }}

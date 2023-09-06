@@ -33,8 +33,10 @@ spec:
               cpu: {{ .Values.compute.database.cpu }}
               memory: {{ .Values.compute.database.memory }}
           ports:
-            - name: http
+            - name: management
               containerPort: 8000
+            - name: quickfix
+              containerPort: 3001
       {{- if .Values.compute.database.nodeTypeSelector }}
       nodeSelector:
         sds/node-type: {{ .Values.compute.database.nodeTypeSelector }}
