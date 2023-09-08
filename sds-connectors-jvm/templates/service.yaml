@@ -4,6 +4,8 @@ kind: Service
 metadata:
   name: connectors-jvm
   namespace: {{.Release.Name}}
+  annotations:
+    sds/load-ports-as-separate-services: "true"
   labels:
     app: connectors-jvm
 spec:
